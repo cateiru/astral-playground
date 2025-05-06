@@ -62,7 +62,12 @@ async function main() {
   if (colorElement == null) {
     throw new Error("colorElement is null");
   }
-  await colorElement.type("#ff0000");
+  await colorElement.evaluate(
+    (element: any, color) => {
+      element.value = color;
+    },
+    { args: ["#ff0000"] }
+  );
 
   // type="date"
   const dateElement = await formGroupElement.$("input[type='date']");
