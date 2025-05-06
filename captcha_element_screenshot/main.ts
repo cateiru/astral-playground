@@ -1,5 +1,5 @@
 /**
- * astral を使用してブラウザページのスクリーンショットを取得する例
+ * astral を使用して指定した要素のスクリーンショットを取得する例
  *
  * ```sh
  * deno run ./captcha_element_screenshot/main.ts
@@ -13,9 +13,6 @@ const CAPTCHA_URL = "https://blog.cateiru.com/about";
 // キャプチャを取得する要素のCSSセレクタ
 const CAPTCHA_ELEMENT_SELECTOR = "div.js-about-subscriber";
 
-/**
- * astral を使用してブラウザページのスクリーンショットを取得する例
- */
 async function main() {
   const browser = await launch({
     // headless を true にすることで実際にブラウザを起動して動作確認ができる:

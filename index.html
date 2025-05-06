@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flex {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        input, select, textarea {
+            margin: 5px 0;
+        }
+
+        .area {
+            background-color: violet;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>astral playground</h1>
+
+    <div class="form-group">
+        <h2>Forms</h2>
+
+        <input type="button" value="Button">
+
+        <div class="flex">
+            <input type="checkbox" id="checkbox" name="checkbox">
+            <label for="checkbox">Checkbox</label>
+        </div>
+
+        <div class="flex">
+            <input type="radio" id="radio1" name="radio" value="option1">
+            <label for="radio1">Option</label>
+        </div>
+
+
+        <div class="flex">
+            <input type="color" id="color" name="color" value="#000000">
+            <label for="color">Color</label>
+        </div>
+
+        <input type="date" id="date" name="date">
+
+        <input type="datetime-local" id="datetime" name="datetime">
+
+        <input type="month" id="month" name="month">
+
+        <input type="time" id="time" name="time">
+
+        <input type="week" id="week" name="week">
+
+        <input type="email" id="email" name="email" placeholder="Email">
+
+        <input type="number" id="number" name="number" placeholder="Number">
+
+        <input type="password" id="password" name="password" placeholder="Password">
+
+        <input type="range" id="range" name="range" min="0" max="100">
+
+        <select id="select" name="select">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+
+        <textarea id="textarea" name="textarea" rows="4" cols="50" placeholder="Textarea"></textarea>
+    </div>
+
+    <div class="area">
+        <h2>Area</h2>
+
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+        <p>Hello World</p>
+    </div>
+
+</body>
+</html>
