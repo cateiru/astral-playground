@@ -6,7 +6,6 @@
  * ```
  */
 
-import { bold } from "jsr:@std/fmt@1.0.3/colors";
 import { launch } from "jsr:@astral/astral";
 
 // キャプチャを取得するURL
@@ -58,6 +57,26 @@ async function main() {
     // captureBeyondViewport: false,
   });
   Deno.writeFileSync(`${import.meta.dirname}/image2.png`, image2);
+
+  // CASE3: JavaScript 経由で絶対位置を取得して、`page.screenshot` メソッドを使用してスクリーンショットを取得する
+  const scrollY = await targetElement.evaluate(() => {
+    return (window as any).pageYOffset;
+  });
+  const boundingBox3 = await targetElement.boundingBox();
+  if (boundingBox3 == null) {
+    throw new Error("Element bounding box not found");
+  }
+  const image3 = await page.screenshot({
+    captureBeyondViewport: true,
+    clip: {
+      x: boundingBox3.x,
+      y: boundingBox3.y + scrollY,
+      width: boundingBox3.width,
+      height: boundingBox3.height,
+      scale: 1,
+    },
+  });
+  Deno.writeFileSync(`${import.meta.dirname}/image3.png`, image3);
 
   await page.close();
   await browser.close();
