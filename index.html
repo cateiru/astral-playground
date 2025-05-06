@@ -37,7 +37,15 @@
 
         <input type="text" placeholder="Text">
 
-        <input type="button" value="Button">
+        <div class="flex">
+            <input type="button" value="Button" class="js-button">
+            <p class="js-button-clicked">no click</p>
+            <script>
+                document.querySelector('.js-button').addEventListener('click', function() {
+                    document.querySelector('.js-button-clicked').textContent = 'clicked';
+                });
+            </script>
+        </div>
 
         <div class="flex">
             <input type="checkbox" id="checkbox" name="checkbox">
