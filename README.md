@@ -1,1 +1,5 @@
-# astral-playground
+# @astral/astral Playground
+
+## LICENSE
+
+[MIT](./LICENSE)
